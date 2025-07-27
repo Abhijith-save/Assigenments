@@ -1,0 +1,164 @@
+package task;
+
+import java.util.*;
+import java.text.NumberFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
+public class TaskManager {
+
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+
+        // Task 1= Age, Height, Weight
+        System.out.println("Enter age");
+        int userAge = input.nextInt();
+
+        System.out.println("Enter height");
+        float userHeight = input.nextFloat();
+
+        System.out.println("Enter weight");
+        double userWeight = input.nextDouble();
+
+        System.out.println("Age: " + userAge);
+        System.out.println("Height: " + userHeight);
+        System.out.println("Weight: " + userWeight);
+
+        // Task 2= Student Data
+        System.out.println("___ Student Details ___");
+
+        System.out.println("Enter student name");
+        String fullName = input.next();
+
+        System.out.println("Enter student ID");
+        int studentId = input.nextInt();
+
+        System.out.println("Enter marks");
+        double studentMarks = input.nextDouble();
+
+        System.out.println("Enter grade");
+        char studentGrade = input.next().charAt(0);
+
+        System.out.println("Student ID: " + studentId);
+        System.out.println("Student Name: " + fullName);
+        System.out.println("Marks: " + studentMarks);
+        System.out.println("Grade: " + studentGrade);
+
+        // Task 3= Two Numbers Operations
+        System.out.println("Enter first number");
+        int firstNum = input.nextInt();
+
+        System.out.println("Enter second number");
+        int secondNum = input.nextInt();
+
+        int total = firstNum + secondNum;
+        System.out.println("Greater number: " + Math.max(firstNum, secondNum));
+        System.out.println("Sum of both: " + total);
+
+        if (firstNum > 0 && secondNum > 0) {
+            System.out.println("Both numbers are positive");
+        } else {
+            System.out.println("Both numbers are not positive");
+        }
+
+        // Task 4= Greeting Message
+        input.nextLine();
+        System.out.print("Enter first name: ");
+        String fname = input.nextLine();
+
+        System.out.print("Enter last name: ");
+        String lname = input.nextLine();
+
+        String message = "Hello, " + fname + " " + lname + "! Welcome to the system.";
+        System.out.println(message);
+
+        // Task 5= Reverse Sentence
+        System.out.print("Enter a sentence: ");
+        String sentence = input.nextLine();
+
+        String reversed = new StringBuilder(sentence).reverse().toString();
+
+        System.out.println("Original: " + sentence);
+        System.out.println("Reversed: " + reversed);
+
+        // Task 6= Count Character in String
+        System.out.println("Enter a word:");
+        String word = input.nextLine();
+
+        System.out.println("Enter character to count");
+        char target = input.next().charAt(0);
+
+        int count = 0;
+        for (int i = 0; i < word.length(); i++) {
+            if (word.charAt(i) == target) {
+                count++;
+            }
+        }
+
+        System.out.println("Character '" + target + "' appears " + count + " times.");
+
+        // Task 7= Display Current Date
+        LocalDate date = LocalDate.now();
+        DateTimeFormatter format = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        String today = date.format(format);
+        System.out.println("Current Date: " + today);
+
+        // Task 8= Currency Formatting
+        System.out.print("Enter amount: ");
+        double amount = input.nextDouble();
+
+        NumberFormat formatter = NumberFormat.getCurrencyInstance(Locale.US);
+        String currency = formatter.format(amount);
+
+        System.out.println("Formatted Amount: " + currency);
+    }
+}
+ Output 
+Enter age  
+21  
+Enter height  
+5.6  
+Enter weight  
+68.5  
+Age: 21  
+Height: 5.6  
+Weight: 68.5  
+___ Student Details ___  
+Enter student name  
+Neha  
+Enter student ID  
+102  
+Enter marks  
+89.4  
+Enter grade  
+B  
+Student ID: 102  
+Student Name: Neha  
+Marks: 89.4  
+Grade: B  
+Enter first number  
+45  
+Enter second number  
+55  
+Greater number: 55  
+Sum of both: 100  
+Both numbers are positive  
+Enter first name:  
+Neha  
+Enter last name:  
+Verma  
+Hello, Neha Verma! Welcome to the system.  
+Enter a sentence:  
+Java is fun  
+Original: Java is fun  
+Reversed: nuf si avaJ  
+Enter a word:  
+assignment  
+Enter character to count  
+s  
+Character 's' appears 2 times.  
+Current Date: 27-07-2025  
+Enter amount:  
+4500  
+Formatted Amount: $4,500.00
