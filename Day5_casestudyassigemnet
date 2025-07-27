@@ -11,7 +11,7 @@ public class CourseDataInsert {
     public static void main(String[] args) {
         String url = "jdbc:mysql://localhost:3306/course_db";
         String username = "root";
-        String password = "your_password";
+        String password = "Abhi@89199";
 
         String[][] courses = {
             {"21", "Java FullStack", "George", "34"},
