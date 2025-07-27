@@ -1,0 +1,243 @@
+BankOperations.java
+package BankExample;
+
+public interface BankOperations {
+    void deposit(double amount);
+    void withdraw(double amount);
+    void transfer(Account target, double amount);
+    double checkBalance();
+    void showTransactionHistory();
+}
+
+/////Account.java
+
+package BankExample;
+
+public abstract class Account implements BankOperations {
+
+    protected String accNumber;
+    protected double currentBalance;
+    protected String[] history = new String[100];
+    protected int count = 0;
+
+    public Account(String accNumber, double openingBalance) {
+        this.accNumber = accNumber;
+        this.currentBalance = openingBalance;
+    }
+
+    public void addHistory(String log) {
+        if (count < history.length) {
+            history[count++] = log;
+        }
+    }
+
+    public void transfer(Account target, double amount) {
+        if (this.currentBalance >= amount) {
+            this.withdraw(amount);
+            target.deposit(amount);
+            addHistory("Transferred to Account " + target.accNumber + ": Rs" + amount);
+        } else {
+            System.out.println("Insufficient funds for transfer.");
+        }
+    }
+
+    public double checkBalance() {
+        return currentBalance;
+    }
+
+    public void showTransactionHistory() {
+        System.out.println("Transaction Log for Account: " + accNumber);
+        for (int i = 0; i < count; i++) {
+            System.out.println("- " + history[i]);
+        }
+    }
+}
+SavingsAcc.java
+
+package BankExample;
+
+public class SavingsAcc extends Account {
+
+    private final double MIN_LIMIT = 1000.0;
+    private double startBalance;
+
+    public SavingsAcc(String accNumber, double startBalance) {
+        super(accNumber, startBalance);
+        this.accNumber = accNumber;
+        this.startBalance = startBalance;
+    }
+
+    public void deposit(double amount) {
+        currentBalance += amount;
+        addHistory("Deposited: Rs" + amount);
+    }
+
+    public void withdraw(double amount) {
+        if (currentBalance - amount >= MIN_LIMIT) {
+            currentBalance -= amount;
+            addHistory("Withdrawn: Rs" + amount);
+        } else {
+            System.out.println("Withdrawal denied due to minimum balance.");
+        }
+    }
+}
+CurrentAcc.java
+
+package BankExample;
+
+public class CurrentAcc extends Account {
+
+    private final double OVERDRAFT = 2000.0;
+
+    public CurrentAcc(String accNumber, double initialBalance) {
+        super(accNumber, initialBalance);
+    }
+
+    public void deposit(double amount) {
+        currentBalance += amount;
+        addHistory("Deposited: Rs" + amount);
+    }
+
+    public void withdraw(double amount) {
+        if (currentBalance - amount >= -OVERDRAFT) {
+            currentBalance -= amount;
+            addHistory("Withdrawn: Rs" + amount);
+        } else {
+            System.out.println("Overdraft limit exceeded.");
+        }
+    }
+}
+
+### Person.java
+
+package BankExample;
+
+public class Person {
+
+    private String id;
+    private String fullName;
+    private Account[] accountList = new Account[5];
+    private int total = 0;
+
+    public Person(String id, String fullName) {
+        this.id = id;
+        this.fullName = fullName;
+    }
+
+    public void addAccount(Account acc) {
+        if (total < accountList.length) {
+            accountList[total++] = acc;
+        }
+    }
+
+    public Account[] getAccounts() {
+        return accountList;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public String getFullName() {
+        return fullName;
+    }
+}
+// BankUnit.java
+
+package BankExample;
+
+public class BankUnit {
+
+    private String unitId;
+    private String unitName;
+    private Person[] personList = new Person[50];
+    private int totalPersons = 0;
+
+    public BankUnit(String unitId, String unitName) {
+        this.unitId = unitId;
+        this.unitName = unitName;
+        System.out.println("Bank Unit Created: " + unitName + " [ID: " + unitId + "]");
+    }
+
+    public void registerPerson(Person p) {
+        if (totalPersons < personList.length) {
+            personList[totalPersons++] = p;
+            System.out.println("Person Registered: " + p.getFullName() + " [ID: " + p.getId() + "]");
+            System.out.println("Person linked to unit.");
+        }
+    }
+
+    public Person searchPersonById(String id) {
+        for (int i = 0; i < totalPersons; i++) {
+            if (personList[i].getId().equals(id)) {
+                return personList[i];
+            }
+        }
+        return null;
+    }
+
+    public void showAllPersons() {
+        System.out.println("All Persons in Unit " + unitName + ":");
+        for (int i = 0; i < totalPersons; i++) {
+            System.out.println("- " + personList[i].getFullName() + " [ID: " + personList[i].getId() + "]");
+        }
+    }
+}
+MainRunner.java
+
+package BankExample;
+
+public class MainRunner {
+
+    public static void main(String[] args) {
+
+        BankUnit unit = new BankUnit("U100", "Central Unit");
+
+        Person p1 = new Person("P101", "Kavya Mehra");
+        unit.registerPerson(p1);
+
+        SavingsAcc sa = new SavingsAcc("A5001", 6000.0);
+        CurrentAcc ca = new CurrentAcc("A5002", 2500.0);
+
+        p1.addAccount(sa);
+        p1.addAccount(ca);
+
+        System.out.println("Savings Account [A5001] created with Rs6000.0");
+        System.out.println("Current Account [A5002] created with Rs2500.0 and overdraft Rs2000.0");
+
+        sa.deposit(1500.0);
+        System.out.println("Balance in Savings: Rs" + sa.checkBalance());
+
+        ca.withdraw(3000.0);
+        System.out.println("Balance in Current: Rs" + ca.checkBalance());
+
+        sa.transfer(ca, 1200.0);
+        System.out.println("Savings after transfer: Rs" + sa.checkBalance());
+        System.out.println("Current after transfer: Rs" + ca.checkBalance());
+
+        System.out.println();
+        sa.showTransactionHistory();
+        ca.showTransactionHistory();
+    }
+}
+///Output
+
+Bank Unit Created: Central Unit \[ID: U100]
+Person Registered: Kavya Mehra \[ID: P101]
+Person linked to unit.
+Savings Account \[A5001] created with Rs6000.0
+Current Account \[A5002] created with Rs2500.0 and overdraft Rs2000.0
+Balance in Savings: Rs7500.0
+Balance in Current: Rs-500.0
+Savings after transfer: Rs6300.0
+Current after transfer: Rs700.0
+
+Transaction Log for Account: A5001
+
+* Deposited: Rs1500.0
+* Transferred to Account A5002: Rs1200.0
+
+Transaction Log for Account: A5002
+
+* Withdrawn: Rs3000.0
+* Deposited: Rs1200.0
