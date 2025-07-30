@@ -1,0 +1,286 @@
+case 1::::::::
+MainApp.java
+
+package com.foodorder;
+
+import com.foodorder.config.AppConfig;
+import com.foodorder.model.Customer;
+import com.foodorder.service.FoodOrderService;
+import org.springframework.context.annotation.*;
+
+public class MainApp {
+    public static void main(String[] args) {
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+
+        Customer customer = context.getBean(Customer.class);
+        FoodOrderService service = context.getBean(FoodOrderService.class);
+
+        System.out.println("Order Placed By: " + customer);
+        String result = service.placeOrder(customer);
+        System.out.println("System Response: " + result);
+
+        context.close();
+    }
+}
+
+///AppConfig.java
+
+package com.foodorder.config;
+
+import com.foodorder.model.Customer;
+import com.foodorder.model.Restaurant;
+import com.foodorder.service.FoodOrderService;
+import org.springframework.context.annotation.*;
+
+import java.util.Arrays;
+import java.util.List;
+
+@Configuration
+public class AppConfig {
+
+    @Bean
+    public Customer customer() {
+        return new Customer("Abhijith Anumula", "abhijith.anumula@foodmail.com", "Hyderabadi");
+    }
+
+    @Bean
+    public Restaurant restaurantOne() {
+        return new Restaurant("Biryani Empire", "Madhapur", Arrays.asList("Hyderabadi", "Mughlai"));
+    }
+
+    @Bean
+    public Restaurant restaurantTwo() {
+        return new Restaurant("Veg Point", "Kukatpally", Arrays.asList("South Indian", "North Indian"));
+    }
+
+    @Bean
+    public FoodOrderService foodOrderService() {
+        List<Restaurant> list = Arrays.asList(restaurantOne(), restaurantTwo());
+        return new FoodOrderService(list);
+    }
+}
+///Customer.java
+
+
+package com.foodorder.model;
+
+public class Customer {
+    private String name;
+    private String email;
+    private String preferredCuisine;
+
+    public Customer(String name, String email, String preferredCuisine) {
+        this.name = name;
+        this.email = email;
+        this.preferredCuisine = preferredCuisine;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPreferredCuisine() {
+        return preferredCuisine;
+    }
+
+    public void setPreferredCuisine(String preferredCuisine) {
+        this.preferredCuisine = preferredCuisine;
+    }
+
+    @Override
+    public String toString() {
+        return "Customer{name='" + name + "', email='" + email + "', preferredCuisine='" + preferredCuisine + "'}";
+    }
+}
+///Restaurant.java
+
+
+package com.foodorder.model;
+
+import java.util.List;
+
+public class Restaurant {
+    private String name;
+    private String location;
+    private List<String> availableCuisines;
+
+    public Restaurant(String name, String location, List<String> availableCuisines) {
+        this.name = name;
+        this.location = location;
+        this.availableCuisines = availableCuisines;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public List<String> getAvailableCuisines() {
+        return availableCuisines;
+    }
+
+    public void setAvailableCuisines(List<String> availableCuisines) {
+        this.availableCuisines = availableCuisines;
+    }
+
+    @Override
+    public String toString() {
+        return "Restaurant{name='" + name + "', location='" + location + "', availableCuisines=" + availableCuisines + "}";
+    }
+}
+
+
+///FoodOrderService.java
+
+
+package com.foodorder.service;
+
+import com.foodorder.model.Customer;
+import com.foodorder.model.Restaurant;
+
+import java.util.List;
+
+public class FoodOrderService {
+    private List<Restaurant> restaurantList;
+
+    public FoodOrderService(List<Restaurant> restaurantList) {
+        this.restaurantList = restaurantList;
+    }
+
+    public String placeOrder(Customer customer) {
+        for (Restaurant restaurant : restaurantList) {
+            if (restaurant.getAvailableCuisines().contains(customer.getPreferredCuisine())) {
+                return "Order confirmed at: " + restaurant.getName();
+            }
+        }
+        return "No restaurant found for " + customer.getPreferredCuisine() + " cuisine.";
+    }
+}
+
+Output
+
+
+Order Placed By: Customer{name='Abhijith Anumula', email='abhijith.anumula@foodmail.com', preferredCuisine='Hyderabadi'}
+System Response: Order confirmed at: Biryani Empire
+
+
+////Case Study 2: Annotation-Based Configuration 
+
+
+
+AppConfig.java
+
+package com.example.smarthome;
+
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+@ComponentScan("com.example.smarthome")
+public class AppConfig {
+}
+
+Device.java
+
+package com.example.smarthome;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class Device {
+    private String deviceType = "Smart Light";
+    private boolean isOn = false;
+
+    public void turnOn() {
+        isOn = true;
+        System.out.println(deviceType + " has been activated.");
+    }
+
+    public void turnOff() {
+        isOn = false;
+        System.out.println(deviceType + " has been deactivated.");
+    }
+
+    public String getDeviceType() {
+        return deviceType;
+    }
+
+    public boolean isOn() {
+        return isOn;
+    }
+}
+
+///User.java
+
+
+package com.example.smarthome;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class User {
+    private String name = "Abhijith Anumula";
+    private String homeId = "HOME-987";
+
+    public String getName() {
+        return name;
+    }
+
+    public String getHomeId() {
+        return homeId;
+    }
+}
+
+////AutomationService.java
+
+
+package com.example.smarthome;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class AutomationService {
+
+    @Autowired
+    private User user;
+
+    @Autowired
+    private Device device;
+
+    public void controlDevice() {
+        System.out.println("User " + user.getName() + " (ID: " + user.getHomeId() + ") is operating the smart device.");
+        device.turnOn();
+        device.turnOff();
+    }
+}
+
+
+////Output
+
+User Abhijith Anumula (ID: HOME-987) is operating the smart device.
+Smart Light has been activated.
+Smart Light has been deactivated.
