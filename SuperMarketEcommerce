@@ -1,0 +1,1297 @@
+#########contact.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreshMart Supermarket - Contact Us</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="bi bi-basket2-fill me-2"></i>FreshMart
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="productsDropdown" role="button" data-bs-toggle="dropdown">
+                            Products
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="products.html">Page 1</a></li>
+                            <li><a class="dropdown-item" href="products-page2.html">Page 2</a></li>
+                            <li><a class="dropdown-item" href="products-page3.html">Page 3</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="register.html">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container py-5" style="margin-top: 76px;">
+        <header class="text-center mb-5">
+            <h1 class="display-5 fw-bold">Contact Us</h1>
+            <p class="lead text-muted">We'd love to hear from you. Get in touch with our team.</p>
+        </header>
+
+        <div class="row">
+            <div class="col-lg-8 mb-5">
+                <div class="card shadow">
+                    <div class="card-body p-5">
+                        <h2 class="mb-4">Send us a Message</h2>
+                        
+                        <form novalidate>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="contactName" class="form-label">Your Name *</label>
+                                    <input type="text" class="form-control" id="contactName" name="contactName" required>
+                                    <div class="invalid-feedback">
+                                        Please provide your name.
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="contactEmail" class="form-label">Email Address *</label>
+                                    <input type="email" class="form-control" id="contactEmail" name="contactEmail" required>
+                                    <div class="invalid-feedback">
+                                        Please provide a valid email address.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="contactSubject" class="form-label">Subject *</label>
+                                <select class="form-select" id="contactSubject" name="contactSubject" required>
+                                    <option value="">Select a subject</option>
+                                    <option value="general">General Inquiry</option>
+                                    <option value="product">Product Question</option>
+                                    <option value="order">Order Support</option>
+                                    <option value="complaint">Complaint</option>
+                                    <option value="suggestion">Suggestion</option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    Please select a subject.
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="contactPhone" class="form-label">Phone Number</label>
+                                <input type="tel" class="form-control" id="contactPhone" name="contactPhone" 
+                                       pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890">
+                                <div class="form-text">Optional - We'll call you back if needed</div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="contactMessage" class="form-label">Message *</label>
+                                <textarea class="form-control" id="contactMessage" name="contactMessage" 
+                                          rows="5" minlength="10" required 
+                                          placeholder="Please provide details about your inquiry..."></textarea>
+                                <div class="invalid-feedback">
+                                    Please provide your message (at least 10 characters).
+                                </div>
+                            </div>
+
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="newsletter" name="newsletter">
+                                <label class="form-check-label" for="newsletter">
+                                    I would like to receive promotional emails
+                                </label>
+                            </div>
+
+                            <button type="submit" class="btn btn-success btn-lg">
+                                <i class="bi bi-send me-2"></i>Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="card shadow mb-4">
+                    <div class="card-body p-4">
+                        <h3 class="card-title mb-4">Store Information</h3>
+                        
+                        <div class="mb-3">
+                            <h6><i class="bi bi-geo-alt-fill text-success me-2"></i>Address</h6>
+                            <p class="ms-4">123 Main Street<br>Anytown, USA 12345</p>
+                        </div>
+
+                        <div class="mb-3">
+                            <h6><i class="bi bi-telephone-fill text-success me-2"></i>Phone</h6>
+                            <p class="ms-4">
+                                Main: (555) 123-4567<br>
+                                Customer Service: (555) 123-4568
+                            </p>
+                        </div>
+
+                        <div class="mb-3">
+                            <h6><i class="bi bi-envelope-fill text-success me-2"></i>Email</h6>
+                            <p class="ms-4">
+                                General: info@freshmart.com<br>
+                                Support: support@freshmart.com
+                            </p>
+                        </div>
+
+                        <div class="mb-3">
+                            <h6><i class="bi bi-clock-fill text-success me-2"></i>Store Hours</h6>
+                            <p class="ms-4">
+                                Monday - Sunday<br>
+                                7:00 AM - 10:00 PM
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card shadow">
+                    <div class="card-body p-4">
+                        <h3 class="card-title mb-4">Follow Us</h3>
+                        <div class="d-flex gap-3">
+                            <a href="#" class="btn btn-outline-success">
+                                <i class="bi bi-facebook"></i>
+                            </a>
+                            <a href="#" class="btn btn-outline-success">
+                                <i class="bi bi-twitter"></i>
+                            </a>
+                            <a href="#" class="btn btn-outline-success">
+                                <i class="bi bi-instagram"></i>
+                            </a>
+                            <a href="#" class="btn btn-outline-success">
+                                <i class="bi bi-youtube"></i>
+                            </a>
+                        </div>
+                        <p class="mt-3 small text-muted">
+                            Follow us for daily deals, recipes, and store updates!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container">
+            <div class="text-center">
+                <small>&copy; 2025 FreshMart Supermarket. All rights reserved.</small>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+#########index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreshMart Supermarket - Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="bi bi-basket2-fill me-2"></i>FreshMart
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="productsDropdown" role="button" data-bs-toggle="dropdown">
+                            Products
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="products.html">Page 1</a></li>
+                            <li><a class="dropdown-item" href="products-page2.html">Page 2</a></li>
+                            <li><a class="dropdown-item" href="products-page3.html">Page 3</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="register.html">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="bi bi-cart3"></i> Cart <span class="badge bg-light text-dark">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main style="margin-top: 76px;">
+        <!-- Hero Carousel -->
+        <section>
+            <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="carousel-content bg-success">
+                            <div class="container">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-6">
+                                        <h1 class="display-4 fw-bold text-white mb-3">Fresh Produce Sale</h1>
+                                        <p class="lead text-white mb-4">Save 25% on all fresh fruits and vegetables</p>
+                                        <a href="products.html" class="btn btn-light btn-lg">Shop Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="carousel-content bg-primary">
+                            <div class="container">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-6">
+                                        <h1 class="display-4 fw-bold text-white mb-3">Weekly Specials</h1>
+                                        <p class="lead text-white mb-4">Check out our amazing weekly deals</p>
+                                        <a href="products-page2.html" class="btn btn-light btn-lg">View Deals</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="carousel-content bg-warning">
+                            <div class="container">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-6">
+                                        <h1 class="display-4 fw-bold text-dark mb-3">Organic Selection</h1>
+                                        <p class="lead text-dark mb-4">Discover our premium organic products</p>
+                                        <a href="products-page3.html" class="btn btn-dark btn-lg">Explore</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Featured Products -->
+        <section class="py-5">
+            <div class="container">
+                <h2 class="text-center mb-5">Featured Products</h2>
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body text-center">
+                                <div class="product-icon bg-success-subtle mx-auto mb-3">
+                                    <i class="bi bi-apple text-success display-4"></i>
+                                </div>
+                                <h5 class="card-title">Fresh Red Apples</h5>
+                                <p class="card-text">Crispy and sweet red apples, perfect for snacking</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="h5 text-success">$2.99/lb</span>
+                                    <button class="btn btn-success">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body text-center">
+                                <div class="product-icon bg-warning-subtle mx-auto mb-3">
+                                    <i class="bi bi-egg text-warning display-4"></i>
+                                </div>
+                                <h5 class="card-title">Organic Bananas</h5>
+                                <p class="card-text">Fresh organic bananas, great source of potassium</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="h5 text-success">$1.49/lb</span>
+                                    <button class="btn btn-success">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body text-center">
+                                <div class="product-icon bg-primary-subtle mx-auto mb-3">
+                                    <i class="bi bi-cup text-primary display-4"></i>
+                                </div>
+                                <h5 class="card-title">Fresh Milk</h5>
+                                <p class="card-text">Fresh whole milk from local farms</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="h5 text-success">$3.99/gallon</span>
+                                    <button class="btn btn-success">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body text-center">
+                                <div class="product-icon bg-warning-subtle mx-auto mb-3">
+                                    <i class="bi bi-bread-slice text-warning display-4"></i>
+                                </div>
+                                <h5 class="card-title">Whole Wheat Bread</h5>
+                                <p class="card-text">Freshly baked whole wheat bread</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="h5 text-success">$2.49</span>
+                                    <button class="btn btn-success">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body text-center">
+                                <div class="product-icon bg-danger-subtle mx-auto mb-3">
+                                    <i class="bi bi-egg-fried text-danger display-4"></i>
+                                </div>
+                                <h5 class="card-title">Ground Beef</h5>
+                                <p class="card-text">Fresh ground beef, 85% lean</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="h5 text-success">$5.99/lb</span>
+                                    <button class="btn btn-success">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body text-center">
+                                <div class="product-icon bg-success-subtle mx-auto mb-3">
+                                    <i class="bi bi-carrot text-success display-4"></i>
+                                </div>
+                                <h5 class="card-title">Fresh Carrots</h5>
+                                <p class="card-text">Fresh organic carrots, perfect for cooking</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="h5 text-success">$1.99/lb</span>
+                                    <button class="btn btn-success">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>FreshMart Supermarket</h5>
+                    <p>Your neighborhood fresh food store since 1995.</p>
+                    <p>
+                        <i class="bi bi-geo-alt-fill me-2"></i>123 Main Street, Anytown, USA 12345<br>
+                        <i class="bi bi-telephone-fill me-2"></i>(555) 123-4567<br>
+                        <i class="bi bi-envelope-fill me-2"></i>info@freshmart.com
+                    </p>
+                </div>
+                <div class="col-md-3">
+                    <h6>Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-light text-decoration-none">Home</a></li>
+                        <li><a href="products.html" class="text-light text-decoration-none">Products</a></li>
+                        <li><a href="contact.html" class="text-light text-decoration-none">Contact</a></li>
+                        <li><a href="register.html" class="text-light text-decoration-none">Register</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h6>Follow Us</h6>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-light"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-light"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="text-light"><i class="bi bi-instagram"></i></a>
+                    </div>
+                    <p class="mt-3 small">Mon-Sun: 7:00 AM - 10:00 PM</p>
+                </div>
+            </div>
+            <hr class="my-3">
+            <div class="text-center">
+                <small>&copy; 2025 FreshMart Supermarket. All rights reserved.</small>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+#######login.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreshMart Supermarket - Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="bi bi-basket2-fill me-2"></i>FreshMart
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="productsDropdown" role="button" data-bs-toggle="dropdown">
+                            Products
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="products.html">Page 1</a></li>
+                            <li><a class="dropdown-item" href="products-page2.html">Page 2</a></li>
+                            <li><a class="dropdown-item" href="products-page3.html">Page 3</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="register.html">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="login.html">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container py-5" style="margin-top: 76px;">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-4">
+                <div class="card shadow">
+                    <div class="card-body p-5">
+                        <div class="text-center mb-4">
+                            <i class="bi bi-person-circle display-1 text-success"></i>
+                            <h1 class="mt-2">Welcome Back</h1>
+                            <p class="text-muted">Sign in to your FreshMart account</p>
+                        </div>
+                        
+                        <form novalidate>
+                            <div class="mb-3">
+                                <label for="loginEmail" class="form-label">Email Address</label>
+                                <input type="email" class="form-control" id="loginEmail" name="loginEmail" required>
+                                <div class="invalid-feedback">
+                                    Please provide a valid email address.
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="loginPassword" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="loginPassword" name="loginPassword" required>
+                                <div class="invalid-feedback">
+                                    Please provide your password.
+                                </div>
+                            </div>
+
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="remember" name="remember">
+                                <label class="form-check-label" for="remember">
+                                    Remember me
+                                </label>
+                            </div>
+
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-success btn-lg">Sign In</button>
+                            </div>
+
+                            <div class="text-center mt-3">
+                                <a href="#" class="text-success text-decoration-none">Forgot your password?</a>
+                            </div>
+
+                            <hr class="my-4">
+
+                            <div class="text-center">
+                                <p>Don't have an account? <a href="register.html" class="text-success">Create one here</a></p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container">
+            <div class="text-center">
+                <small>&copy; 2025 FreshMart Supermarket. All rights reserved.</small>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+#########products.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreshMart Supermarket - Products</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="bi bi-basket2-fill me-2"></i>FreshMart
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="productsDropdown" role="button" data-bs-toggle="dropdown">
+                            Products
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item active" href="products.html">Page 1</a></li>
+                            <li><a class="dropdown-item" href="products-page2.html">Page 2</a></li>
+                            <li><a class="dropdown-item" href="products-page3.html">Page 3</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="register.html">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container py-5" style="margin-top: 76px;">
+        <header class="text-center mb-5">
+            <h1 class="display-5 fw-bold">Our Products - Page 1</h1>
+            <p class="lead text-muted">Fresh quality products for your family</p>
+        </header>
+
+        <!-- Products Grid -->
+        <section>
+            <div class="row">
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <article class="card h-100 shadow-sm product-card">
+                        <div class="card-body text-center">
+                            <div class="product-icon bg-success-subtle mx-auto mb-3">
+                                <i class="bi bi-apple text-success display-6"></i>
+                            </div>
+                            <h5 class="card-title">Fresh Red Apples</h5>
+                            <p class="card-text small">Crispy and sweet red apples</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fw-bold text-success">$2.99/lb</span>
+                                <button class="btn btn-success btn-sm">Add</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <article class="card h-100 shadow-sm product-card">
+                        <div class="card-body text-center">
+                            <div class="product-icon bg-warning-subtle mx-auto mb-3">
+                                <i class="bi bi-egg text-warning display-6"></i>
+                            </div>
+                            <h5 class="card-title">Organic Bananas</h5>
+                            <p class="card-text small">Fresh organic bananas</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fw-bold text-success">$1.49/lb</span>
+                                <button class="btn btn-success btn-sm">Add</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <article class="card h-100 shadow-sm product-card">
+                        <div class="card-body text-center">
+                            <div class="product-icon bg-primary-subtle mx-auto mb-3">
+                                <i class="bi bi-cup text-primary display-6"></i>
+                            </div>
+                            <h5 class="card-title">Fresh Milk</h5>
+                            <p class="card-text small">Fresh whole milk from local farms</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fw-bold text-success">$3.99/gallon</span>
+                                <button class="btn btn-success btn-sm">Add</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <article class="card h-100 shadow-sm product-card">
+                        <div class="card-body text-center">
+                            <div class="product-icon bg-warning-subtle mx-auto mb-3">
+                                <i class="bi bi-bread-slice text-warning display-6"></i>
+                            </div>
+                            <h5 class="card-title">Whole Wheat Bread</h5>
+                            <p class="card-text small">Freshly baked whole wheat bread</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fw-bold text-success">$2.49</span>
+                                <button class="btn btn-success btn-sm">Add</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <article class="card h-100 shadow-sm product-card">
+                        <div class="card-body text-center">
+                            <div class="product-icon bg-danger-subtle mx-auto mb-3">
+                                <i class="bi bi-egg-fried text-danger display-6"></i>
+                            </div>
+                            <h5 class="card-title">Ground Beef</h5>
+                            <p class="card-text small">Fresh ground beef, 85% lean</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fw-bold text-success">$5.99/lb</span>
+                                <button class="btn btn-success btn-sm">Add</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <article class="card h-100 shadow-sm product-card">
+                        <div class="card-body text-center">
+                            <div class="product-icon bg-success-subtle mx-auto mb-3">
+                                <i class="bi bi-carrot text-success display-6"></i>
+                            </div>
+                            <h5 class="card-title">Fresh Carrots</h5>
+                            <p class="card-text small">Fresh organic carrots</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fw-bold text-success">$1.99/lb</span>
+                                <button class="btn btn-success btn-sm">Add</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <article class="card h-100 shadow-sm product-card">
+                        <div class="card-body text-center">
+                            <div class="product-icon bg-primary-subtle mx-auto mb-3">
+                                <i class="bi bi-cup-straw text-primary display-6"></i>
+                            </div>
+                            <h5 class="card-title">Greek Yogurt</h5>
+                            <p class="card-text small">Creamy Greek yogurt with probiotics</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fw-bold text-success">$4.99</span>
+                                <button class="btn btn-success btn-sm">Add</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <article class="card h-100 shadow-sm product-card">
+                        <div class="card-body text-center">
+                            <div class="product-icon bg-info-subtle mx-auto mb-3">
+                                <i class="bi bi-fish text-info display-6"></i>
+                            </div>
+                            <h5 class="card-title">Fresh Salmon</h5>
+                            <p class="card-text small">Fresh Atlantic salmon, rich in omega-3</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fw-bold text-success">$12.99/lb</span>
+                                <button class="btn btn-success btn-sm">Add</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <article class="card h-100 shadow-sm product-card">
+                        <div class="card-body text-center">
+                            <div class="product-icon bg-success-subtle mx-auto mb-3">
+                                <i class="bi bi-leaf text-success display-6"></i>
+                            </div>
+                            <h5 class="card-title">Organic Spinach</h5>
+                            <p class="card-text small">Fresh organic spinach leaves</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fw-bold text-success">$2.99</span>
+                                <button class="btn btn-success btn-sm">Add</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <article class="card h-100 shadow-sm product-card">
+                        <div class="card-body text-center">
+                            <div class="product-icon bg-warning-subtle mx-auto mb-3">
+                                <i class="bi bi-egg-fried text-warning display-6"></i>
+                            </div>
+                            <h5 class="card-title">Chicken Breast</h5>
+                            <p class="card-text small">Boneless chicken breast</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fw-bold text-success">$7.99/lb</span>
+                                <button class="btn btn-success btn-sm">Add</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <article class="card h-100 shadow-sm product-card">
+                        <div class="card-body text-center">
+                            <div class="product-icon bg-warning-subtle mx-auto mb-3">
+                                <i class="bi bi-square text-warning display-6"></i>
+                            </div>
+                            <h5 class="card-title">Cheddar Cheese</h5>
+                            <p class="card-text small">Sharp cheddar cheese</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fw-bold text-success">$5.49</span>
+                                <button class="btn btn-success btn-sm">Add</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <article class="card h-100 shadow-sm product-card">
+                        <div class="card-body text-center">
+                            <div class="product-icon bg-warning-subtle mx-auto mb-3">
+                                <i class="bi bi-circle text-warning display-6"></i>
+                            </div>
+                            <h5 class="card-title">Fresh Oranges</h5>
+                            <p class="card-text small">Sweet and juicy oranges</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fw-bold text-success">$3.99/bag</span>
+                                <button class="btn btn-success btn-sm">Add</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pagination -->
+        <nav class="mt-5">
+            <ul class="pagination justify-content-center">
+                <li class="page-item active">
+                    <a class="page-link" href="products.html">1</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="products-page2.html">2</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="products-page3.html">3</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="products-page2.html">Next</a>
+                </li>
+            </ul>
+        </nav>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>FreshMart Supermarket</h5>
+                    <p>Your neighborhood fresh food store since 1995.</p>
+                </div>
+                <div class="col-md-3">
+                    <h6>Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-light text-decoration-none">Home</a></li>
+                        <li><a href="products.html" class="text-light text-decoration-none">Products</a></li>
+                        <li><a href="contact.html" class="text-light text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h6>Follow Us</h6>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-light"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-light"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="text-light"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-3">
+            <div class="text-center">
+                <small>&copy; 2025 FreshMart Supermarket. All rights reserved.</small>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+############register.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreshMart Supermarket - Register</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="bi bi-basket2-fill me-2"></i>FreshMart
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="productsDropdown" role="button" data-bs-toggle="dropdown">
+                            Products
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="products.html">Page 1</a></li>
+                            <li><a class="dropdown-item" href="products-page2.html">Page 2</a></li>
+                            <li><a class="dropdown-item" href="products-page3.html">Page 3</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="register.html">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container py-5" style="margin-top: 76px;">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <div class="card shadow">
+                    <div class="card-body p-5">
+                        <h1 class="text-center mb-4">Create Account</h1>
+                        <p class="text-center text-muted mb-4">Join FreshMart for exclusive offers and faster checkout</p>
+                        
+                        <form novalidate>
+                            <div class="mb-3">
+                                <label for="fullName" class="form-label">Full Name *</label>
+                                <input type="text" class="form-control" id="fullName" name="fullName" required>
+                                <div class="invalid-feedback">
+                                    Please provide your full name.
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email Address *</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                                <div class="invalid-feedback">
+                                    Please provide a valid email address.
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Password *</label>
+                                <input type="password" class="form-control" id="password" name="password" 
+                                       minlength="8" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d@$!%*?&]{8,}$" required>
+                                <div class="form-text">Password must be at least 8 characters with uppercase, lowercase, and number.</div>
+                                <div class="invalid-feedback">
+                                    Password must meet the requirements above.
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="confirmPassword" class="form-label">Confirm Password *</label>
+                                <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" required>
+                                <div class="invalid-feedback">
+                                    Please confirm your password.
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="phone" class="form-label">Phone Number</label>
+                                <input type="tel" class="form-control" id="phone" name="phone" 
+                                       pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890">
+                                <div class="invalid-feedback">
+                                    Please enter a valid phone number (XXX-XXX-XXXX).
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="address" class="form-label">Address *</label>
+                                <textarea class="form-control" id="address" name="address" rows="3" required></textarea>
+                                <div class="invalid-feedback">
+                                    Please provide your address.
+                                </div>
+                            </div>
+
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="newsletter" name="newsletter">
+                                <label class="form-check-label" for="newsletter">
+                                    Subscribe to our newsletter for weekly deals and promotions
+                                </label>
+                            </div>
+
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="terms" name="terms" required>
+                                <label class="form-check-label" for="terms">
+                                    I agree to the <a href="#" class="text-success">Terms of Service</a> and 
+                                    <a href="#" class="text-success">Privacy Policy</a> *
+                                </label>
+                                <div class="invalid-feedback">
+                                    You must agree to the terms of service.
+                                </div>
+                            </div>
+
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-success btn-lg">Create Account</button>
+                            </div>
+
+                            <div class="text-center mt-3">
+                                <p>Already have an account? <a href="login.html" class="text-success">Login here</a></p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container">
+            <div class="text-center">
+                <small>&copy; 2025 FreshMart Supermarket. All rights reserved.</small>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+#########style.css
+/* FreshMart Supermarket Custom Styles */
+
+:root {
+    --bs-success: #198754;
+    --bs-success-rgb: 25, 135, 84;
+    --primary-green: #2d5a3d;
+    --light-green: #e8f5e8;
+}
+
+/* Global Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+}
+
+/* Carousel Custom Styles */
+.carousel-content {
+    height: 400px;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, var(--bs-success), var(--primary-green));
+}
+
+.carousel-item {
+    height: 400px;
+}
+
+/* Product Cards */
+.product-card {
+    transition: all 0.3s ease;
+    border: none;
+    border-radius: 15px;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
+}
+
+.product-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Custom Background Colors */
+.bg-success-subtle {
+    background-color: rgba(25, 135, 84, 0.1) !important;
+}
+
+.bg-warning-subtle {
+    background-color: rgba(255, 193, 7, 0.1) !important;
+}
+
+.bg-primary-subtle {
+    background-color: rgba(13, 110, 253, 0.1) !important;
+}
+
+.bg-danger-subtle {
+    background-color: rgba(220, 53, 69, 0.1) !important;
+}
+
+.bg-info-subtle {
+    background-color: rgba(13, 202, 240, 0.1) !important;
+}
+
+/* Form Enhancements */
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--bs-success);
+    box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.25);
+}
+
+.btn-success {
+    background-color: var(--bs-success);
+    border-color: var(--bs-success);
+    transition: all 0.3s ease;
+}
+
+.btn-success:hover {
+    background-color: var(--primary-green);
+    border-color: var(--primary-green);
+    transform: translateY(-2px);
+}
+
+/* Navigation Enhancements */
+.navbar-brand {
+    font-size: 1.5rem;
+}
+
+.navbar-nav .nav-link {
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+/* Card Enhancements */
+.card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.card.shadow {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Button Enhancements */
+.btn {
+    border-radius: 10px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+/* Pagination */
+.page-link {
+    color: var(--bs-success);
+    border-color: #dee2e6;
+}
+
+.page-link:hover {
+    color: var(--primary-green);
+    background-color: var(--light-green);
+    border-color: var(--bs-success);
+}
+
+.page-item.active .page-link {
+    background-color: var(--bs-success);
+    border-color: var(--bs-success);
+}
+
+/* Footer */
+footer {
+    background-color: #212529 !important;
+}
+
+footer a {
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--bs-success) !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .carousel-content {
+        height: 300px;
+        text-align: center;
+    }
+    
+    .carousel-item {
+        height: 300px;
+    }
+    
+    .display-4 {
+        font-size: 2rem;
+    }
+    
+    .lead {
+        font-size: 1rem;
+    }
+    
+    .product-icon {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .btn {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .carousel-content {
+        height: 250px;
+    }
+    
+    .carousel-item {
+        height: 250px;
+    }
+    
+    .display-4 {
+        font-size: 1.75rem;
+    }
+    
+    .card-body {
+        padding: 1rem;
+    }
+}
+
+/* Animation Classes */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Box Model Demonstration */
+.demo-box {
+    border: 3px solid var(--bs-success);
+    padding: 2rem;
+    margin: 1rem;
+    background-color: var(--light-green);
+    border-radius: 10px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--bs-success);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-green);
+}
+
+/* Utility Classes */
+.text-success {
+    color: var(--bs-success) !important;
+}
+
+.bg-success {
+    background-color: var(--bs-success) !important;
+}
+
+/* Print Styles */
+@media print {
+    .navbar,
+    .btn,
+    footer {
+        display: none !important;
+    }
+    
+    .card {
+        border: 1px solid #ddd !important;
+        box-shadow: none !important;
+    }
+}
